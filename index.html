@@ -228,7 +228,7 @@ pre {
 	  <div class="side image reveal reveal_left">
 		<div class="item-wrapper">
 			<div class="item card">
-			  <img width="500" src="new-measure1.png" alt="">
+			  <img width="500" src="new-measure1.png" alt="new-measure1:9:png">
 			</div>
 		</div>
 	  </div>
@@ -263,7 +263,7 @@ pre {
 	  <div class="main image reveal reveal_right">
 		<div class="item-wrapper">
 			<div class="item card">
-			  <img width="500" src="includes1.png" alt="includes1:2:png">
+			  <img width="500" src="includes1.png" alt="includes1:6:png">
 			</div>
 		</div>
 	  </div>
@@ -273,7 +273,7 @@ pre {
 	  <div class="side image reveal reveal_left">
         <div class="item-wrapper">
 			<div class="item card">
-				<img width="500" src="value-sets1.png" alt="value-sets1:4:png">
+				<img width="500" src="value-sets1.png" alt="value-sets1:9:png">
 			</div>
 		</div>
       </div>
@@ -309,7 +309,7 @@ pre {
 	  <div class="image side reveal reveal_left">
 		<div class="item-wrapper">
 			<div class="item card">
-			  <img width="500" src="codes1.png" alt="codes1:4:png">
+			  <img width="500" src="codes1.png" alt="codes1:5:png">
 			</div>
 		</div>
       </div>
@@ -319,7 +319,7 @@ pre {
 		<div class="side image reveal reveal_right">
 			<div class="item-wrapper">
 				<div class="item card">
-				  <img width="500" src="parameters1.png" alt="parameters1:2:png">
+				  <img width="500" src="parameters1.png" alt="parameters1:4:png">
 				</div>
 			</div>
 		</div>
@@ -349,14 +349,14 @@ pre {
 
 				<p class="reveal">For my measure, I will need to extract the year from the measurement period.	This doesn't require a function as I'm only doing this once in my code but makes for a good example. The function takes a <code><span class="keyword">DateTime</span></code> as its only argument and returns the year as an <code><span class="keyword">Integer</span></code>.</p>
 				<pre class="reveal"><code><span class="keyword">define function</span> <span class="quote">"FromYear"</span>(MyDate <span class="keyword">DateTime</span>):
-	<span class="keyword">month from</span> <span class="quote">"MyDate"</span></code></pre>
+	<span class="keyword">year from</span> <span class="quote">"MyDate"</span></code></pre>
 			</div>
 		</div>
       </div>
 	  <div class="side image reveal reveal_left">
 		<div class="item-wrapper">
 			<div class="item card">
-			  <img width="500" src="functions1.png" alt="">
+			  <img width="500" src="functions1.png" alt="functions1:8:png">
 			</div>
 		</div>
       </div>
@@ -366,7 +366,7 @@ pre {
 		<div class="side image">
 			<div class="item-wrapper full-height">
 				<div class="item card sticky">
-					<img width="500" src="definitions1.svg" alt=""></img>
+					<img id="definitions" width="500" src="definitions1.svg" alt="definitions1:4:png"></img>
 				</div>
 			</div>
 		</div>
@@ -453,15 +453,16 @@ pre {
 		<div class="main">
 			<div class="item-wrapper">
 				<div class="item">
-					<p class="reveal">Our work is not done quite yet. Next, we need to go to the population workspace and select the appropriate definition for each population (e.g., initial populations, denominators, denominator exclusions, and numerators). We've made this easy by naming our definitions to align with these populations.</>
-					<p class="reveal">From the measure packager, we add these populations to the package grouping and save. Then, at the bottom of that page, we can create the <a href="fluvax-v0-0-006-FHIR-4-0-1.zip">measure package</a> and export it. This zip file can be loaded into Bonnie for testing. More to come on that.</>
+					<p class="reveal">Now, we can view all of our code in the CQL Library Editor but our work is not done quite yet.</p>
+					<p class="reveal">Next, we need to go to the population workspace and select the appropriate definition for each population (e.g., initial populations, denominators, denominator exclusions, and numerators). We've made this easy by naming our definitions to align with these populations.</>
+					<p class="reveal">From the measure packager, we add these populations to the package grouping and save. Then, at the bottom of that page, we can create the <a href="fluvax-v0-0-008-FHIR-4-0-1.zip">measure package</a> and export it. This zip file can be loaded into Bonnie for testing. More to come on that.</>
 				</div>
 			</div>		
 		</div>
       <div class="side image reveal reveal_right">
         <div class="item-wrapper">
 			<div class="item card">
-				<img width="500" src="package-measure1.png" alt="">
+				<img width="500" src="package-measure1.png" alt="package-measure1:13:png">
 			</div>
 		</div>
 	  </div>
@@ -526,17 +527,17 @@ function animateFrom(elem, direction) {
 			var tweens = [];
 			for (var i = Number(start); i <= Number(end); i++) {
 				tweens.push({method: 'set', props: {attr: {src: filename + String(i) + '.' + ext}}});
-				tweens.push({method: 'to', props: {autoAlpha:1, duration: 0.5}});
-				tweens.push({method: 'to', props: {autoAlpha:0, duration: 0.5, delay: 3}});
+				tweens.push({method: 'to', props: {autoAlpha:1, duration: 0.75}});
+				tweens.push({method: 'to', props: {autoAlpha:0, duration: 0.75, delay: 1.5}});
 			}
 			
 			var tl = gsap.timeline({repeat: -1});
 			tweens.forEach(function (item) {
 				tl[item.method](img, item.props);
 			});
-			
+
 			gsap.set(img, {attr: {src: filename + String(i) + '.' + ext}});
-			gsap.to(img, {autoAlpha:1, duration: 0.5});
+			gsap.to(img, {autoAlpha:1, duration: 0.75});
 		} else {
 		
 		}
@@ -561,6 +562,38 @@ document.addEventListener("DOMContentLoaded", function() {
       onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
     });
   });
+  
+  	const regex = new RegExp('[0-9]+:[0-9]+:[a-zA-Z]+$');
+	img = document.querySelector('#definitions');
+
+	if (img) {
+		if (img && regex.test(img.alt)) {
+			var n = img.alt.search(regex);
+			var filename = img.alt.slice(0, n);
+			[start, end, ext] = img.alt.slice(n, 9999).split(':');
+			
+			var tweens = [];
+			for (var i = Number(start); i <= Number(end); i++) {
+				tweens.push({method: 'set', props: {attr: {src: filename + String(i) + '.' + ext}}});
+				tweens.push({method: 'to', props: {autoAlpha:1, duration: 0.75}});
+				tweens.push({method: 'to', props: {autoAlpha:0, duration: 0.75, delay: 1.5}});
+			}
+			
+			var tl = gsap.timeline({repeat: -1});
+			tweens.forEach(function (item) {
+				tl[item.method](img, item.props);
+			});
+
+			gsap.set(img, {attr: {src: filename + String(i) + '.' + ext}});
+			gsap.to(img, {autoAlpha:1, duration: 0.75});
+		} else {
+		
+		}
+		img.alt = ''
+	}
+  
+  
+  
 });
 
 </script>
