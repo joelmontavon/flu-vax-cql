@@ -1,0 +1,1 @@
+This tutorial will walk you thru the steps to creating a digital measure using CQL and FHIR with CMS' Measure Authoring Tool (MAT). The measure is based upon the Advisory Committee on Immunization Practices (ACIP) influenza vaccine recommendations for 2021-22 on the CDC website.
